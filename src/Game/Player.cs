@@ -14,6 +14,10 @@ namespace Game
             set
             {
                 _healthPoints = value;
+                if (_healthPoints < 0)
+                    _healthPoints = 0;
+                if (_healthPoints > 100)
+                    _healthPoints = 100;
             }
         }
 

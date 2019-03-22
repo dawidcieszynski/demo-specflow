@@ -20,9 +20,9 @@ namespace Game.Specs.B_Feature_With_Table
         [When(@"folowing monsters attack him")]
         public void WhenFolowingMonstersattackHim(Table table)
         {
-            foreach (var row in table.Rows)
+            var monsters = table.CreateSet<Monster>();
+            foreach (var monster in monsters)
             {
-                var monster = new Monster { Strength = int.Parse(row[1]) };
                 monster.Attack(_player);
             }
         }
